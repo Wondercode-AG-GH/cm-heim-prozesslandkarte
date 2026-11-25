@@ -1201,7 +1201,7 @@ function relOf(p,i){const my=leads(p.steps[i-1]);return p.steps.map((x,j)=>j+1).
 let DTAB="ablauf";
 function techRow(c,l,t,tag,warn){return `<li><span class="sys ${c}">${esc(l)}</span><div class="tb"><p>${esc(t)}</p>${warn?`<p class="warn">${esc(warn)}</p>`:""}</div><span class="tw">${tag}</span></li>`;}
 function objDet(o){const d=OBJ[o];if(!d)return `<div class="xd plain"><code>${esc(o)}</code></div>`;
-  return `<details class="xd"><summary><code>${esc(o)}</code><span class="sl">${TSYS[d[0]]}</span></summary><div class="xb"><p>${esc(d[1])}</p><dl><div><dt>Wichtige Felder</dt><dd>${esc(d[2])}</dd></div><div><dt>Angelegt und geändert von</dt><dd>${esc(d[3])}</dd></div><div><dt>Gelesen von</dt><dd>${esc(d[4])}</dd></div></dl></div></details>`;}
+  return `<details class="xd"><summary><code>${esc(o)}</code><span class="sl">${TSYS[d[0]]}</span></summary><div class="xb"><p>${esc(d[1])}</p><dl><div><dt>Wichtige Felder</dt><dd>${esc(d[2])}</dd></div><div><dt>Angelegt und geändert von</dt><dd>${esc(d[3])}</dd></div></dl></div></details>`;}
 function gapDet(id){const g=GAP[id];if(!g)return "";
   return `<details class="xd"><summary><span class="id">${id}</span><span>${esc(g[1])}</span><span class="sev ${g[0]}">${SEV[g[0]]}</span></summary><div class="xb"><dl><div><dt>Befund</dt><dd>${esc(g[2])}</dd></div><div><dt>Warum es wichtig ist</dt><dd>${esc(g[3])}</dd></div><div><dt>Was es braucht</dt><dd>${esc(g[4])}</dd></div></dl></div></details>`;}
 function stepTech(p,i,x){
@@ -1261,8 +1261,7 @@ function openObj(o){
   db_.innerHTML=`<div class="rq" style="border-top:0;padding-top:0"><div class="top"><div style="display:grid;gap:3px"><span class="id">${TSYS[d[0]]}</span><h3 id="dtitle"><code>${esc(o)}</code></h3></div></div>
    <div class="sec"><span>Zweck</span><p>${esc(d[1])}</p></div>
    <div class="sec"><span>Wichtige Felder</span><p>${esc(d[2])}</p></div>
-   <div class="sec"><span>Angelegt und geändert von</span><p>${esc(d[3])}</p></div>
-   <div class="sec"><span>Gelesen von</span><p>${esc(d[4])}</p></div></div>`;
+   <div class="sec"><span>Angelegt und geändert von</span><p>${esc(d[3])}</p></div></div>`;
   dr.hidden=false;updBack();db_.scrollTop=0;
 }
 const NAV=[];const dback=document.getElementById("dback");
@@ -1598,7 +1597,7 @@ function relOf(p,i){const my=leads(p.steps[i-1]);return p.steps.map((x,j)=>j+1).
 let DTAB="ablauf";
 function techRow(c,l,t,tag,warn){return `<li><span class="sys ${c}">${esc(l)}</span><div class="tb"><p>${esc(t)}</p>${warn?`<p class="warn">${esc(warn)}</p>`:""}</div><span class="tw">${tag}</span></li>`;}
 function objDet(o){const d=OBJ[o];if(!d)return `<div class="xd plain"><code>${esc(o)}</code></div>`;
-  return `<details class="xd"><summary><code>${esc(o)}</code><span class="sl">${TSYS[d[0]]}</span></summary><div class="xb"><p>${esc(d[1])}</p><dl><div><dt>Key fields</dt><dd>${esc(d[2])}</dd></div><div><dt>Created and changed by</dt><dd>${esc(d[3])}</dd></div><div><dt>Read by</dt><dd>${esc(d[4])}</dd></div></dl></div></details>`;}
+  return `<details class="xd"><summary><code>${esc(o)}</code><span class="sl">${TSYS[d[0]]}</span></summary><div class="xb"><p>${esc(d[1])}</p><dl><div><dt>Key fields</dt><dd>${esc(d[2])}</dd></div><div><dt>Created and changed by</dt><dd>${esc(d[3])}</dd></div></dl></div></details>`;}
 function gapDet(id){const g=GAP[id];if(!g)return "";
   return `<details class="xd"><summary><span class="id">${id}</span><span>${esc(g[1])}</span><span class="sev ${g[0]}">${SEV[g[0]]}</span></summary><div class="xb"><dl><div><dt>Finding</dt><dd>${esc(g[2])}</dd></div><div><dt>Why it matters</dt><dd>${esc(g[3])}</dd></div><div><dt>What it takes</dt><dd>${esc(g[4])}</dd></div></dl></div></details>`;}
 function stepTech(p,i,x){
@@ -1658,8 +1657,7 @@ function openObj(o){
   db_.innerHTML=`<div class="rq" style="border-top:0;padding-top:0"><div class="top"><div style="display:grid;gap:3px"><span class="id">${TSYS[d[0]]}</span><h3 id="dtitle"><code>${esc(o)}</code></h3></div></div>
    <div class="sec"><span>Purpose</span><p>${esc(d[1])}</p></div>
    <div class="sec"><span>Key fields</span><p>${esc(d[2])}</p></div>
-   <div class="sec"><span>Created and changed by</span><p>${esc(d[3])}</p></div>
-   <div class="sec"><span>Read by</span><p>${esc(d[4])}</p></div></div>`;
+   <div class="sec"><span>Created and changed by</span><p>${esc(d[3])}</p></div></div>`;
   dr.hidden=false;updBack();db_.scrollTop=0;
 }
 const NAV=[];const dback=document.getElementById("dback");
