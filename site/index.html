@@ -359,15 +359,15 @@ const P=[
  lanes:["kunde","sf","ap","mm"],
  steps:[
   {l:"kunde",c:0,k:"p",w:"Kunde",t:"Kontaktformular auf der Website",r:["SF 14"]},
-  {l:"sf",c:1,k:"s",t:"Lead entsteht",st:"E",r:["SF 14"]},
+  {l:"sf",c:1,k:"s",t:"Lead entsteht",st:"O",r:["SF 14"]},
   {l:"sf",c:2,k:"m",w:"Vertrieb",t:"Opportunity, Angebot, Bestellung",r:[],src:"Confluence 5.2 Auftraggenerierung"},
   {l:"sf",c:3,k:"p",w:"Vertrieb",t:"Opportunity „Closed Won“",r:["SF 1"]},
-  {l:"ap",c:4,k:"s",t:"Kunde in AP plus angelegt",st:"E",r:["SF 1","AP 1"]},
-  {l:"sf",c:5,k:"s",t:"Kundennummer am Account",st:"E",r:["SF 1","SF 2"]},
-  {l:"mm",c:6,k:"s",t:"Firma im Portal angelegt",st:"E",r:["SF 2","MM 1"]},
+  {l:"ap",c:4,k:"s",t:"Kunde in AP plus angelegt",st:"O",r:["SF 1","AP 1"]},
+  {l:"sf",c:5,k:"s",t:"Kundennummer am Account",st:"O",r:["SF 1","SF 2"]},
+  {l:"mm",c:6,k:"s",t:"Firma im Portal angelegt",st:"O",r:["SF 2","MM 1"]},
   {l:"kunde",c:6,k:"p",w:"Kunde",t:"Schickt Verbindungsmerkblatt",r:["SF 7"]},
   {l:"sf",c:7,k:"p",w:"Julian",t:"Trägt „MyMOBS Admin“ ein",r:["SF 7"]},
-  {l:"mm",c:8,k:"s",t:"Admin angelegt, Zugang per Mail",st:"E",r:["SF 7","MM 4"]},
+  {l:"mm",c:8,k:"s",t:"Admin angelegt, Zugang per Mail",st:"O",r:["SF 7","MM 4"]},
   {l:"mm",c:9,k:"p",w:"Kunden-Admin",t:"Legt weitere Benutzer an",r:["SF 7"]}],
  edges:[[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[8,9],[9,10],[10,11]],
  dec:[["Die Lieferadresse wird bei „Closed Won“ Pflicht.","SF 1"],
@@ -378,19 +378,19 @@ const P=[
  lanes:["sf","ap","mm"],
  steps:[
   {l:"sf",c:0,k:"p",w:"Order Management",t:"Auftrag „Wird überprüft“",r:["SF 9"]},
-  {l:"sf",c:1,k:"p",w:"Order Management",t:"Anlagen anlegen",st:"V",r:["SF 11"]},
-  {l:"ap",c:2,k:"s",t:"Leere Anlagen, Nummern zurück",st:"V",r:["SF 11"]},
-  {l:"sf",c:3,k:"p",w:"Order Management",t:"Artikel je Anlage zuordnen",st:"V",r:["SF 11"]},
-  {l:"sf",c:4,k:"p",w:"Technischer Support",t:"Freigabe",st:"E",r:["SF 15"]},
-  {l:"ap",c:5,k:"s",t:"Auftrag mit Positionen je Anlage",st:"E",r:["SF 9","AP 7"]},
+  {l:"sf",c:1,k:"p",w:"Order Management",t:"Anlagen anlegen",st:"O",r:["SF 11"]},
+  {l:"ap",c:2,k:"s",t:"Leere Anlagen, Nummern zurück",st:"O",r:["SF 11"]},
+  {l:"sf",c:3,k:"p",w:"Order Management",t:"Artikel je Anlage zuordnen",st:"O",r:["SF 11"]},
+  {l:"sf",c:4,k:"p",w:"Technischer Support",t:"Freigabe",st:"O",r:["SF 15"]},
+  {l:"ap",c:5,k:"s",t:"Auftrag mit Positionen je Anlage",st:"O",r:["SF 9","AP 7"]},
   {l:"ap",c:6,k:"p",w:"Produktion",t:"Bauen, Seriennummern zuordnen",r:["SF 9"]},
-  {l:"sf",c:7,k:"s",t:"Anlagen und Geräte sichtbar",st:"E",r:["SF 3","SF 4","AP 2","AP 3"]},
-  {l:"mm",c:7,k:"s",t:"Gerätedatenbank aktuell",st:"E",r:["SF 5","MM 2","AP 4"]},
+  {l:"sf",c:7,k:"s",t:"Anlagen und Geräte sichtbar",st:"O",r:["SF 3","SF 4","AP 2","AP 3"]},
+  {l:"mm",c:7,k:"s",t:"Gerätedatenbank aktuell",st:"O",r:["SF 5","MM 2","AP 4"]},
   {l:"ap",c:7,k:"m",w:"Order Management",t:"Warenausgang anlegen",r:[],src:"Confluence 5.4 Kaufauftragsabwicklung"},
   {l:"mm",c:8,k:"m",w:"Technik",t:"MyMOBS-Adapter freigeben",r:[],src:"Confluence 5.4 Kaufauftragsabwicklung"},
   {l:"ap",c:8,k:"p",w:"Logistik",t:"Warenausgang buchen",r:["AP 13"]},
-  {l:"sf",c:9,k:"s",t:"Auftrag „geliefert“, Rechnung",st:"V",r:["AP 13"]},
-  {l:"sf",c:10,k:"s",t:"Nur Miete: Vertrag für die Mietzeit",st:"V",r:["SF 16"]}],
+  {l:"sf",c:9,k:"s",t:"Auftrag „geliefert“, Rechnung",st:"O",r:["AP 13"]},
+  {l:"sf",c:10,k:"s",t:"Nur Miete: Vertrag für die Mietzeit",st:"O",r:["SF 16"]}],
  edges:[[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[7,9],[7,10],[9,11],[10,12],[12,13],[13,14]],
  dec:[["Welcher Status oder welches Feld am Auftrag bedeutet „freigegeben“?","SF 15"],
   ["Liste der 13 Auftragsarten mit Zielsystem bestätigen.","SF 15"],
@@ -405,9 +405,9 @@ const P=[
  goal:"Partneraufträge gehen per Knopfdruck aus Salesforce an das Monday-Board des Partners und als Bestellung über AP plus. Monday selbst löst nichts aus.",
  lanes:["sf","mon","partner","ap"],
  steps:[
-  {l:"sf",c:0,k:"p",w:"Technischer Support",t:"Freigabe Partnerauftrag",st:"E",r:["SF 15"]},
-  {l:"sf",c:1,k:"p",w:"Order Management",t:"Partner wählen",st:"E",r:["Mon 2"]},
-  {l:"mon",c:2,k:"s",t:"Aufgabe im Partner-Board",st:"E",r:["Mon 2"]},
+  {l:"sf",c:0,k:"p",w:"Technischer Support",t:"Freigabe Partnerauftrag",st:"O",r:["SF 15"]},
+  {l:"sf",c:1,k:"p",w:"Order Management",t:"Partner wählen",st:"O",r:["Mon 2"]},
+  {l:"mon",c:2,k:"s",t:"Aufgabe im Partner-Board",st:"O",r:["Mon 2"]},
   {l:"partner",c:3,k:"m",w:"Order Management",t:"Angebot des Partners",r:[],src:"Confluence 5.6 Montage"},
   {l:"sf",c:4,k:"p",w:"Order Management",t:"Bestellvorschlag auslösen",st:"F",r:["Mon 4"]},
   {l:"ap",c:5,k:"s",t:"Bestellvorschlag (Stunden, km)",st:"F",r:["Mon 4"]},
@@ -432,11 +432,11 @@ const P=[
  steps:[
   {l:"sf",c:0,k:"p",w:"Technischer Support",t:"IHV bestätigen, Wartungsauftrag",r:["SF 20"]},
   {l:"sf",c:1,k:"p",w:"Innendienst",t:"Vertrag aktivieren",r:["SF 20"]},
-  {l:"mm",c:2,k:"s",t:"Servicelevel und Partner",st:"E",r:["MM 3"]},
-  {l:"sf",c:3,k:"p",w:"Innendienst",t:"Aufgabe an Monday",st:"E",r:["Mon 3"]},
-  {l:"mon",c:4,k:"s",t:"Aufgabe im Partner-Board",st:"E",r:["Mon 3"]},
-  {l:"ap",c:4,k:"s",t:"Warenausgang Batterien, Akkus",st:"V",r:["SF 10"]},
-  {l:"ap",c:5,k:"p",w:"Logistik",t:"Material verschicken",st:"V",r:["SF 10"]},
+  {l:"mm",c:2,k:"s",t:"Servicelevel und Partner",st:"O",r:["MM 3"]},
+  {l:"sf",c:3,k:"p",w:"Innendienst",t:"Aufgabe an Monday",st:"O",r:["Mon 3"]},
+  {l:"mon",c:4,k:"s",t:"Aufgabe im Partner-Board",st:"O",r:["Mon 3"]},
+  {l:"ap",c:4,k:"s",t:"Warenausgang Batterien, Akkus",st:"O",r:["SF 10"]},
+  {l:"ap",c:5,k:"p",w:"Logistik",t:"Material verschicken",st:"O",r:["SF 10"]},
   {l:"ap",c:6,k:"s",t:"Bestellvorschlag an Partner",st:"F",r:["Mon 4"]},
   {l:"mon",c:7,k:"p",w:"Innendienst",t:"Termin mit Kunde und Partner",r:["Mon 3"]},
   {l:"sf",c:8,k:"m",w:"Order Management",t:"Arbeitsbericht, Rechnung prüfen",r:[],src:"Confluence 5.13 Wartung vor Ort"}],
@@ -458,8 +458,8 @@ const P=[
   {l:"ap",c:2,k:"s",t:"Rücksendung, RMA-Nummer zurück",st:"F",r:["SF 8"]},
   {l:"ap",c:3,k:"p",w:"Logistik",t:"Prüfen, scannen, buchen",r:["SF 8"]},
   {l:"sf",c:4,k:"s",t:"Ergebnis zurück, Anlagen ausgebucht",st:"F",r:["AP 6"]},
-  {l:"sf",c:5,k:"s",t:"Soll/Ist, nächste Verlängerung mit Restmenge",st:"E",r:["SF 17","SF 18"]},
-  {l:"sf",c:6,k:"p",w:"Inside Sales",t:"Vertrag prüfen, Fehlmengen klären",st:"E",r:["SF 17"]},
+  {l:"sf",c:5,k:"s",t:"Soll/Ist, nächste Verlängerung mit Restmenge",st:"O",r:["SF 17","SF 18"]},
+  {l:"sf",c:6,k:"p",w:"Inside Sales",t:"Vertrag prüfen, Fehlmengen klären",st:"O",r:["SF 17"]},
   {l:"ap",c:4,k:"m",w:"AV, Technik",t:"Reinigen, prüfen, reparieren",r:["AP 10"],src:"Confluence 5.14 Miete zurück"},
   {l:"ap",c:5,k:"m",w:"Technik",t:"SIM deaktivieren, Adapter löschen",r:[],src:"Confluence 5.14 Miete zurück"},
   {l:"sf",c:7,k:"m",w:"Order Management",t:"Bei Schaden: Angebot an Kunde",r:[],src:"Confluence 5.14 Miete zurück"}],
@@ -477,7 +477,7 @@ const P=[
  lanes:["kunde","sf","ap"],
  steps:[
   {l:"kunde",c:0,k:"p",w:"Kunde, Callcenter",t:"Meldet Defekt",r:["MM 6","MM 7"]},
-  {l:"sf",c:1,k:"s",t:"Kundenvorgang entsteht",st:"E",r:["MM 6","SF 12"]},
+  {l:"sf",c:1,k:"s",t:"Kundenvorgang entsteht",st:"O",r:["MM 6","SF 12"]},
   {l:"sf",c:2,k:"p",w:"Service",t:"RMA über AP-ID",st:"F",r:["SF 8"]},
   {l:"ap",c:3,k:"s",t:"Rücksendung mit Seriennummer",st:"F",r:["SF 8"]},
   {l:"ap",c:4,k:"m",w:"Logistik, AV",t:"Buchen, Serviceauftrag",st:"N",r:["AP 10"]},
@@ -495,12 +495,12 @@ const P=[
  lanes:["kunde","sf","kwp"],
  steps:[
   {l:"kunde",c:0,k:"p",w:"Kunde",t:"Kontaktformular auf der Website",r:["SF 14"]},
-  {l:"sf",c:1,k:"s",t:"FEBS-Lead entsteht",st:"E",r:["SF 14"]},
+  {l:"sf",c:1,k:"s",t:"FEBS-Lead entsteht",st:"O",r:["SF 14"]},
   {l:"sf",c:2,k:"p",w:"Vertrieb",t:"Lead umwandeln, FEBS-Opportunity",r:["KWP 5","KWP 4"]},
   {l:"kwp",c:3,k:"p",w:"FEBS",t:"Kunde und Kontakt anlegen",r:["KWP 1","KWP 2"]},
   {l:"sf",c:4,k:"s",t:"Abgleich, Account anlegen?",st:"O",r:["KWP 1","KWP 2"]},
   {l:"kwp",c:5,k:"p",w:"FEBS",t:"Projekt, Angebot, Auftrag, Rechnung",r:["KWP 5"]},
-  {l:"sf",c:6,k:"s",t:"An der Opportunity gespiegelt",st:"E",r:["KWP 5"]}],
+  {l:"sf",c:6,k:"s",t:"An der Opportunity gespiegelt",st:"O",r:["KWP 5"]}],
  edges:[[1,2],[2,3],[3,4],[4,5],[4,6],[6,7]],
  dec:[["Account in Salesforce aus KWP anlegen (KWP 1) oder keine Integration (KWP 4)?","KWP 1"],
   ["Wie wird das KWP-Angebot mit der Opportunity verknüpft? Was gilt bei einem Angebot ohne Opportunity?","KWP 5"],
@@ -1067,7 +1067,7 @@ function vOverview(){
   const recent=LOG.filter(x=>x.kind==="comment").slice(0,6);
   return `<div class="view">
    <header class="vh"><span class="kicker">THOR-Nachfolge und Data Warehouse</span><h1>Soll-Prozesse C.M. Heim</h1>
-    <p class="goal muted">Sieben Abläufe von der ersten Anfrage bis zur Rückgabe. Jeder zeigt, wer was macht, was automatisch läuft und was wir gemeinsam entscheiden müssen.</p></header>
+    <p class="goal muted">Sieben Abläufe von der ersten Anfrage bis zur Rückgabe.</p></header>
    <div class="stats"><div><b>${uniq.length}</b><span>Anforderungen</span></div><div><b>${dec}</b><span>davon entschieden</span></div><div><b>${open}</b><span>von ${total} Punkten zu entscheiden</span></div></div>
    <div class="flow">${STAGES.slice(0,4).map((st,i)=>`<div class="stage"><span class="sl">${st}</span>${P.filter(p=>p.stage===i).map(card).join("")}</div>`).join("")}
     <div class="stage febs"><span class="sl">FEBS, eigener Strang</span>${P.filter(p=>p.stage===4).map(card).join("")}</div></div>
@@ -1461,7 +1461,7 @@ function vOverview(){
   const recent=LOG.filter(x=>x.kind==="comment").slice(0,6);
   return `<div class="view">
    <header class="vh"><span class="kicker">THOR successor and Data Warehouse</span><h1>Target processes C.M. Heim</h1>
-    <p class="goal muted">Seven flows from the first enquiry to the return. Each shows who does what, what runs automatically and what we need to decide together.</p></header>
+    <p class="goal muted">Seven flows from the first enquiry to the return.</p></header>
    <div class="stats"><div><b>${uniq.length}</b><span>Requirements</span></div><div><b>${dec}</b><span>of them decided</span></div><div><b>${open}</b><span>of ${total} points to decide</span></div></div>
    <div class="flow">${STAGES.slice(0,4).map((st,i)=>`<div class="stage"><span class="sl">${st}</span>${P.filter(p=>p.stage===i).map(card).join("")}</div>`).join("")}
     <div class="stage febs"><span class="sl">FEBS, separate track</span>${P.filter(p=>p.stage===4).map(card).join("")}</div></div>
