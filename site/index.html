@@ -980,7 +980,7 @@ const lead=k=>{const g=regOf(k);return g&&g[5]?g[5]:k;};
 const leads=s=>[...new Set(s.r.map(lead))];
 const titleOf=k=>{const d=SOLL[k]||{},g=regOf(k);return d.ts||(g?g[2]:d.t)||k;};
 const reqsOf=pid=>REG.filter(x=>x[4].includes(pid)&&!x[5]).map(x=>x[0]+" "+x[1]);
-const VIEWS=["uebersicht",...P.map(p=>p.id.toLowerCase()),"grundlagen","entscheide"];
+const VIEWS=["uebersicht",...P.map(p=>p.id.toLowerCase()),"grundlagen"];
 let MODE="soll";
 const ST_ORDER=["E","F","V","O","Z","X","N"];
 
@@ -1006,14 +1006,12 @@ const openCount=list=>list.filter(d=>!(decState(d.id).s&&decState(d.id).s!=="off
 /* Navigation */
 function renderNav(cur){
   const g=allDecs();const oc=pid=>openCount(g.find(x=>x.grp===pid).list);
-  const totalOpen=g.reduce((a,x)=>a+openCount(x.list),0);
   document.getElementById("side").innerHTML=`
    <div class="brand"><b>C.M. Heim</b><span>Soll-Prozesse THOR-Nachfolge</span></div>
    ${langSw()}<div class="navgrp"><a href="#uebersicht" class="${cur==="uebersicht"?"on":""}"><span class="no">·</span>Übersicht<span></span></a></div>
    <div class="navgrp"><span class="lab">Prozesse</span>${P.map(p=>`<a href="#${p.id.toLowerCase()}" class="${cur===p.id.toLowerCase()?"on":""}"><span class="no">${p.id.slice(1)}</span>${p.title}<span class="cnt ${oc(p.id)?"has":""}">${oc(p.id)||"✓"}</span></a>`).join("")}</div>
    <div class="navgrp"><span class="lab">Weiteres</span>
-     <a href="#grundlagen" class="${cur==="grundlagen"?"on":""}"><span class="no">G</span>Grundlagen und Daten<span class="cnt ${oc("Q")?"has":""}">${oc("Q")||"✓"}</span></a>
-     <a href="#entscheide" class="${cur==="entscheide"?"on":""}"><span class="no">E</span>Alle Entscheide<span class="cnt ${totalOpen?"has":""}">${totalOpen}</span></a></div>
+     <a href="#grundlagen" class="${cur==="grundlagen"?"on":""}"><span class="no">G</span>Grundlagen und Daten<span class="cnt ${oc("Q")?"has":""}">${oc("Q")||"✓"}</span></a></div>
    <div class="foot">${LOADED?(CANWRITE?"Änderungen und Kommentare werden für alle gespeichert.":"Nur Ansicht. Für Änderungen braucht es mindestens die Freigabe „Contributor“."):(db?"Lädt gemeinsamen Stand …":"Nur Ansicht. Gemeinsamer Stand in dieser Ansicht nicht verfügbar.")}<br><br>Stand 25.11.2026<br>Grundlage: Workshop, Confluence, Excel Soll-v8</div>`;
 }
 
@@ -1073,7 +1071,7 @@ function vOverview(){
    <div class="stats"><div><b>${uniq.length}</b><span>Anforderungen</span></div><div><b>${dec}</b><span>davon entschieden</span></div><div><b>${open}</b><span>von ${total} Punkten zu entscheiden</span></div></div>
    <div class="flow">${STAGES.slice(0,4).map((st,i)=>`<div class="stage"><span class="sl">${st}</span>${P.filter(p=>p.stage===i).map(card).join("")}</div>`).join("")}
     <div class="stage febs"><span class="sl">FEBS, eigener Strang</span>${P.filter(p=>p.stage===4).map(card).join("")}</div></div>
-   <div class="more"><a href="#grundlagen">Grundlagen und Daten</a><a href="#entscheide">Alle Entscheide</a></div>
+   <div class="more"><a href="#grundlagen">Grundlagen und Daten</a></div>
    ${recent.length?`<section class="blk"><h2>Neueste Kommentare</h2><ul class="list hist-list" data-recent="1">${recent.map(x=>histItem(x,true)).join("")}</ul></section>`:""}
    ${pager("uebersicht")}</div>`;
 }
@@ -1376,7 +1374,7 @@ const lead=k=>{const g=regOf(k);return g&&g[5]?g[5]:k;};
 const leads=s=>[...new Set(s.r.map(lead))];
 const titleOf=k=>{const d=SOLL[k]||{},g=regOf(k);return d.ts||(g?g[2]:d.t)||k;};
 const reqsOf=pid=>REG.filter(x=>x[4].includes(pid)&&!x[5]).map(x=>x[0]+" "+x[1]);
-const VIEWS=["uebersicht",...P.map(p=>p.id.toLowerCase()),"grundlagen","entscheide"];
+const VIEWS=["uebersicht",...P.map(p=>p.id.toLowerCase()),"grundlagen"];
 let MODE="soll";
 const ST_ORDER=["E","F","V","O","Z","X","N"];
 
@@ -1402,14 +1400,12 @@ const openCount=list=>list.filter(d=>!(decState(d.id).s&&decState(d.id).s!=="off
 /* Navigation */
 function renderNav(cur){
   const g=allDecs();const oc=pid=>openCount(g.find(x=>x.grp===pid).list);
-  const totalOpen=g.reduce((a,x)=>a+openCount(x.list),0);
   document.getElementById("side").innerHTML=`
    <div class="brand"><b>C.M. Heim</b><span>Target processes, THOR successor</span></div>
    ${langSw()}<div class="navgrp"><a href="#uebersicht" class="${cur==="uebersicht"?"on":""}"><span class="no">·</span>Overview<span></span></a></div>
    <div class="navgrp"><span class="lab">Processes</span>${P.map(p=>`<a href="#${p.id.toLowerCase()}" class="${cur===p.id.toLowerCase()?"on":""}"><span class="no">${p.id.slice(1)}</span>${p.title}<span class="cnt ${oc(p.id)?"has":""}">${oc(p.id)||"✓"}</span></a>`).join("")}</div>
    <div class="navgrp"><span class="lab">More</span>
-     <a href="#grundlagen" class="${cur==="grundlagen"?"on":""}"><span class="no">G</span>Foundations and data<span class="cnt ${oc("Q")?"has":""}">${oc("Q")||"✓"}</span></a>
-     <a href="#entscheide" class="${cur==="entscheide"?"on":""}"><span class="no">E</span>All decisions<span class="cnt ${totalOpen?"has":""}">${totalOpen}</span></a></div>
+     <a href="#grundlagen" class="${cur==="grundlagen"?"on":""}"><span class="no">G</span>Foundations and data<span class="cnt ${oc("Q")?"has":""}">${oc("Q")||"✓"}</span></a></div>
    <div class="foot">${LOADED?(CANWRITE?"Changes and comments are saved for everyone.":"View only. Changes require at least “Contributor” access."):(db?"Loading shared state …":"View only. The shared state is not available in this view.")}<br><br>As of 25.11.2026<br>Based on: workshop, Confluence, Excel target v8</div>`;
 }
 
@@ -1469,7 +1465,7 @@ function vOverview(){
    <div class="stats"><div><b>${uniq.length}</b><span>Requirements</span></div><div><b>${dec}</b><span>of them decided</span></div><div><b>${open}</b><span>of ${total} points to decide</span></div></div>
    <div class="flow">${STAGES.slice(0,4).map((st,i)=>`<div class="stage"><span class="sl">${st}</span>${P.filter(p=>p.stage===i).map(card).join("")}</div>`).join("")}
     <div class="stage febs"><span class="sl">FEBS, separate track</span>${P.filter(p=>p.stage===4).map(card).join("")}</div></div>
-   <div class="more"><a href="#grundlagen">Foundations and data</a><a href="#entscheide">All decisions</a></div>
+   <div class="more"><a href="#grundlagen">Foundations and data</a></div>
    ${recent.length?`<section class="blk"><h2>Latest comments</h2><ul class="list hist-list" data-recent="1">${recent.map(x=>histItem(x,true)).join("")}</ul></section>`:""}
    ${pager("uebersicht")}</div>`;
 }
